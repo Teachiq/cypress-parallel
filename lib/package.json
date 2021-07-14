@@ -1,11 +1,15 @@
 {
-  "name": "cypress-parallel",
-  "version": "0.8.1",
+  "name": "@teachiq/cypress-parallel",
+  "version": "1.0.4",
   "description": "Reduce up to 40% your Cypress suite execution time parallelizing the test run on the same machine.",
   "main": "cli.js",
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com/"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tnicola/cypress-parallel.git"
+    "url": "git+https://github.com/Teachiq/cypress-parallel.git"
   },
   "keywords": [
     "cypress",
@@ -21,6 +25,12 @@
   "homepage": "https://github.com/tnicola/cypress-parallel#readme",
   "bin": {
     "cypress-parallel": "./cli.js"
+  },
+  "scripts": {
+    "version": "echo $npm_package_version",
+    "preversion": "yalc check && git pull && npm install && npm run lint && npm run test && npm run build",
+    "postversion": "npm publish && git push",
+    "version:beta": "npm run build && npm publish --tag beta"
   },
   "dependencies": {
     "cli-table3": "^0.6.0",
