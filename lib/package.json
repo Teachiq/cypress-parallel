@@ -43,5 +43,8 @@
   },
   "peerDependencies": {
     "cypress-multi-reporters": "^1.5.0"
+  },
+  "devDependencies": {
+    "yalc": "^1.0.0-pre.53"
   }
 }
