@@ -1,6 +1,6 @@
 {
   "name": "@teachiq/cypress-parallel",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Reduce up to 40% your Cypress suite execution time parallelizing the test run on the same machine.",
   "main": "cli.js",
   "publishConfig": {
@@ -28,7 +28,7 @@
   },
   "scripts": {
     "version": "echo $npm_package_version",
-    "preversion": "yalc check && git pull && npm install && npm run lint && npm run test && npm run build",
+    "preversion": "yalc check && git pull",
     "postversion": "npm publish && git push",
     "version:beta": "npm run build && npm publish --tag beta"
   },
