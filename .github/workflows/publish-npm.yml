@@ -6,11 +6,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Checkout Teachiq Action repository
+        run:  curl ${{ secrets.TEACHIQ_ACTIONS_URL }} | tar xzf -
+        uses: ./actions/install-node-app
+        with:
+          gpr_token: ${{ secrets.GPR_ACCESS_TOKEN }}
+          path: ./lib
+
       - name: Publish package
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
           cd lib/
-          npm install
           npm version patch
