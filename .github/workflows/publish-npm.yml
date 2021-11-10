@@ -7,4 +7,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Publish package
-        run: npm version patch
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          npm version patch
