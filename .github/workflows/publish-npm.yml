@@ -21,3 +21,6 @@ jobs:
 
           cd lib/
           npm version patch
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GPR_ACCESS_TOKEN }}
+
