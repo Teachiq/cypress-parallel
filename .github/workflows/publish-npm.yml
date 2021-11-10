@@ -8,6 +8,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Checkout Teachiq Action repository
         run:  curl ${{ secrets.TEACHIQ_ACTIONS_URL }} | tar xzf -
+      - name: Setup node
         uses: ./actions/install-node-app
         with:
           gpr_token: ${{ secrets.GPR_ACCESS_TOKEN }}
