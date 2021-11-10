@@ -29,7 +29,7 @@
   "scripts": {
     "version": "echo $npm_package_version",
     "preversion": "yalc check && git pull",
-    "postversion": "npm publish && git push",
+    "postversion": "npm publish && git add . && git commit -am \"Bump version\" && git push",
     "version:beta": "npm run build && npm publish --tag beta"
   },
   "dependencies": {

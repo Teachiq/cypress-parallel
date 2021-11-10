@@ -1,0 +1,10 @@
+name: publish-package
+on: [workflow_dispatch]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Publish package
+        run: npm version patch
